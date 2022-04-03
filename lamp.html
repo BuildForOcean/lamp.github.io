@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>lamp</title>
+	   	<link rel="stylesheet" href="css/lamp.css"  type="text/css"/>
+		<script type="text/javascript">
+			var flag=false;//判断灯是否开关
+			var colorflag=1;//实现颜色记忆功能，便于下一次开灯与上一次开灯颜色相同
+			function onlight(){
+				if(flag){
+					document.getElementById("lampimg").src="img/l-close.png";
+					document.getElementById("lightImg").src="img/switch-close.png";
+					document.getElementById("oneTem").src="img/off-red.png";
+					document.getElementById("twoTem").src="img/off-yellow.png";
+					document.getElementById("threeTem").src="img/off-blue.png";
+					document.getElementById("fourTem").src="img/off-green.png";
+					document.getElementById("fiveTem").src="img/off-purple.png";
+					flag=false;
+				}else{
+					if(colorflag==1)
+					{
+						document.getElementById("lampimg").src="img/l-red.png";
+						document.getElementById("lightImg").src="img/switch-red.png";
+						document.getElementById("oneTem").src="img/on-red.png";
+					}else if(colorflag==2){
+						document.getElementById("lampimg").src="img/l-yellow.png";
+						document.getElementById("lightImg").src="img/switch-yellow.png";
+						document.getElementById("twoTem").src="img/on-yellow.png";
+					}else if(colorflag==3){
+						document.getElementById("lampimg").src="img/l-blue.png";
+						document.getElementById("lightImg").src="img/switch-blue.png";
+						document.getElementById("threeTem").src="img/on-blue.png";
+					}else if(colorflag==4){
+						document.getElementById("lampimg").src="img/l-green.png";
+						document.getElementById("lightImg").src="img/switch-green.png";
+						document.getElementById("fourTem").src="img/on-green.png";
+					}else if(colorflag==5){
+						document.getElementById("lampimg").src="img/l-purple.png";
+						document.getElementById("lightImg").src="img/switch-purple.png";
+						document.getElementById("fiveTem").src="img/on-purple.png";
+					}
+					flag=true;
+				}
+			}
+			function redlight(){
+				if(flag){
+					document.getElementById("lampimg").src="img/l-red.png";
+					document.getElementById("lightImg").src="img/switch-red.png";
+					document.getElementById("oneTem").src="img/on-red.png";
+					document.getElementById("twoTem").src="img/off-yellow.png";
+					document.getElementById("threeTem").src="img/off-blue.png";
+					document.getElementById("fourTem").src="img/off-green.png";
+					document.getElementById("fiveTem").src="img/off-purple.png";
+					colorflag=1;
+				}else{
+					alert("请先开灯！");
+					//return;
+				}
+			}
+			function yellowlight(){
+				if(flag){
+					document.getElementById("lampimg").src="img/l-yellow.png";
+					document.getElementById("lightImg").src="img/switch-yellow.png";
+					document.getElementById("oneTem").src="img/off-red.png";
+					document.getElementById("twoTem").src="img/on-yellow.png";
+					document.getElementById("threeTem").src="img/off-blue.png";
+					document.getElementById("fourTem").src="img/off-green.png";
+					document.getElementById("fiveTem").src="img/off-purple.png";
+					colorflag=2;
+				}else{
+					alert("请先开灯！");
+					//return;
+				}
+				
+			}
+			function bluelight(){
+				if(flag){
+					document.getElementById("lampimg").src="img/l-blue.png";
+					document.getElementById("lightImg").src="img/switch-blue.png";
+					document.getElementById("oneTem").src="img/off-red.png";
+					document.getElementById("twoTem").src="img/off-yellow.png";
+					document.getElementById("threeTem").src="img/on-blue.png";
+					document.getElementById("fourTem").src="img/off-green.png";
+					document.getElementById("fiveTem").src="img/off-purple.png";
+					colorflag=3;
+				}else{
+					alert("请先开灯！");
+					//return;
+				}
+			}
+			function greenlight(){
+				if(flag){
+					document.getElementById("lampimg").src="img/l-green.png";
+					document.getElementById("lightImg").src="img/switch-green.png";
+					document.getElementById("oneTem").src="img/off-red.png";
+					document.getElementById("twoTem").src="img/off-yellow.png";
+					document.getElementById("threeTem").src="img/off-blue.png";
+					document.getElementById("fourTem").src="img/on-green.png";
+					document.getElementById("fiveTem").src="img/off-purple.png";
+					colorflag=4;
+				}else{
+					alert("请先开灯！");
+					//return;
+				}
+			}
+			function purplelight(){
+				if(flag){
+					document.getElementById("lampimg").src="img/l-purple.png";
+					document.getElementById("lightImg").src="img/switch-purple.png";
+					document.getElementById("oneTem").src="img/off-red.png";
+					document.getElementById("twoTem").src="img/off-yellow.png";
+					document.getElementById("threeTem").src="img/off-blue.png";
+					document.getElementById("fourTem").src="img/off-green.png";
+					document.getElementById("fiveTem").src="img/on-purple.png";
+					colorflag=5;
+				}else{
+					alert("请先开灯！");
+					//return;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="titleDiv">智能家居灯控系统</div>
+		
+		<div class="lampDiv">
+			<img src="img/l-close.png" id="lampimg"/>
+		</div>
+		
+		<div class="lampBtmDiv">
+			<img src="img/switch-close.png"  class="btn"onclick="onlight()" id="lightImg"/>
+		</div>
+		
+		<div class="colorBtnDiv">
+			<img src="img/off-red.png"  id="oneTem" onclick="redlight()" />
+			<img src="img/off-yellow.png" id="twoTem"  onclick="yellowlight()"/>
+			<img src="img/off-blue.png"  id="threeTem" onclick="bluelight()"/>
+			<img src="img/off-green.png"  id="fourTem" onclick="greenlight()"/>
+			<img src="img/off-purple.png" id="fiveTem" onclick="purplelight()"/>
+		</div>
+	</body>
+</html>

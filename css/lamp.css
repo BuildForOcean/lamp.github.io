@@ -1,0 +1,64 @@
+body {
+	background-color: black;
+	background-image: url(../img/bg.jpg);
+}
+
+.titleDiv {
+	font-size: 24px;
+	color: yellow;
+	margin: 30px;
+	text-align: center;
+}
+
+.lampDiv {
+	width: 340px;
+	height: 520px;
+	margin: 0 auto;
+}
+
+.lampBtmDiv {
+	width: 366px;
+	height: 212px;
+	background-image: url(../img/light_btm_bg.png);
+	position: relative;
+	z-index: 2;
+	margin: -80px auto 0;
+	text-align: center;
+}
+
+.btn {
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.colorBtnDiv {
+	width: 430px;
+	height: 100px;
+	margin: -40px auto;
+	position: relative;
+	z-index: 3;
+}
+
+#oneTem {
+	margin-left: 12px;
+}
+
+#twoTem {
+	margin-left: 22px;
+}
+
+#threeTem {
+	margin-left: 15px;
+}
+
+#fourTem {
+	margin-left: 15px;
+}
+
+#fiveTem {
+	margin-left: 18px;
+}
+
+.colorBtnDiv img {
+	cursor: pointer;
+}
